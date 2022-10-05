@@ -1,3 +1,4 @@
+
 // const numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
 // for (let i = 0; 1 < numberOfDrumButtons; i++) {
@@ -57,9 +58,11 @@ function playSound(lale) {
     }
 }
 
-function buttonAnimation(currentKey){
-let activeButton = document.querySelector("."+currentKey);
-    activeButton.classList.add("pressed");
-setTimeout(function(){activeButton.classList.remove("pressed");}, 100);
+function buttonAnimation(currentKey) {
+    let activeButton = $("." + currentKey)
+    activeButton.addClass("pressed");
+    setTimeout(function () {
+        activeButton.removeClass("pressed");
+    }, 100);
 
 }
