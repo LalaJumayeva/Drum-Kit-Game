@@ -1,20 +1,25 @@
-const numberOfDrumButtons = document.querySelectorAll(".drum").length;
+// const numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
-document.addEventListener("keydown", function (event) {
-    console.log(event)
+// for (let i = 0; 1 < numberOfDrumButtons; i++) {
+//     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+//         let buttonID = this.id;
+//         playSound(buttonID);
+//         buttonAnimation(buttonID);
+//     });
+// }
 
+$(".drum").click(function () {
+    let buttonID = this.id;
+    playSound(buttonID);
+    buttonAnimation(buttonID);
+});
+
+
+$(document).keydown(function (event) {
     let buttonID = event.key;
     playSound(buttonID);
     buttonAnimation(buttonID);
-})
-
-for (let i = 0; 1 < numberOfDrumButtons; i++) {
-    document.querySelectorAll(".drum")[i].addEventListener("click", function () {
-        let buttonID = this.id;
-        playSound(buttonID);
-        buttonAnimation(buttonID);
-    });
-}
+});
 
 function playSound(lale) {
     let audio;
